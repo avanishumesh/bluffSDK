@@ -1,0 +1,63 @@
+{
+  "game": "bluff",
+  "games": [
+    {
+      "seed": 20261015,
+      "turns": 38,
+      "outcome": {
+        "placements": [
+          2,
+          1,
+          3,
+          0
+        ],
+        "is_draw": false,
+        "unfinished": [],
+        "reason": "all_placed",
+        "points": {
+          "0": 1.0,
+          "1": 3.0,
+          "2": 5.0,
+          "3": 2.0
+        }
+      },
+      "fallbacks": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0
+      },
+      "faults": [],
+      "latency_max_ms": 1605.2177999999913
+    },
+    {
+      "seed": 20261016,
+      "turns": 36,
+      "outcome": {
+        "placements": [
+          1,
+          2,
+          0,
+          3
+        ],
+        "is_draw": false,
+        "unfinished": [],
+        "reason": "all_placed",
+        "points": {
+          "0": 2.0,
+          "1": 5.0,
+          "2": 3.0,
+          "3": 1.0
+        }
+      },
+      "fallbacks": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0
+      },
+      "faults": [],
+      "latency_max_ms": 1987.5778000000537
+    }
+  ]
+}

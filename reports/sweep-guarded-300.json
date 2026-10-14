@@ -1,0 +1,63 @@
+{
+  "games": 300,
+  "seed_start": 61000,
+  "profile": "guarded",
+  "policy_params": {
+    "prior_bluff_rate": 0.12,
+    "prior_weight": 4.0,
+    "challenge_threshold": 0.6,
+    "finish_relief": 0.17,
+    "near_finish_relief": 0.07,
+    "large_claim_relief": 0.05,
+    "pressure_small_pile_rate": 0.14,
+    "pressure_medium_pile_rate": 0.06,
+    "pressure_min_hand": 8,
+    "pressure_max_pile": 6,
+    "pressure_min_opponent_hand": 5
+  },
+  "opponents": [
+    "heuristic",
+    "conservative",
+    "random"
+  ],
+  "wins": 103,
+  "win_rate": 0.3433333333333333,
+  "mean_points": 3.3766666666666665,
+  "placements": {
+    "second": 104,
+    "third": 93,
+    "fourth": 0,
+    "draws": 0
+  },
+  "faults": 0,
+  "by_starting_seat": {
+    "0": {
+      "games": 75,
+      "wins": 26,
+      "points": 252.0,
+      "win_rate": 0.3466666666666667,
+      "mean_points": 3.36
+    },
+    "1": {
+      "games": 75,
+      "wins": 23,
+      "points": 252.0,
+      "win_rate": 0.30666666666666664,
+      "mean_points": 3.36
+    },
+    "2": {
+      "games": 75,
+      "wins": 23,
+      "points": 243.0,
+      "win_rate": 0.30666666666666664,
+      "mean_points": 3.24
+    },
+    "3": {
+      "games": 75,
+      "wins": 31,
+      "points": 266.0,
+      "win_rate": 0.41333333333333333,
+      "mean_points": 3.546666666666667
+    }
+  }
+}

@@ -4,12 +4,12 @@ Run `uv run --locked python src/agent.py` from this directory. Input/output use 
 newline-JSON protocol 1.0; stdout is reserved for protocol messages.
 
 The entrypoint loads `src/strategy.py`. It sheds the largest truthful rank
-group (one to four current card references), avoiding mixed-rank final
-batches. Challenges use logically impossible rank counts and per-opponent,
-per-batch-size statistics from publicly revealed challenge results. A large
-pile increases pickup risk rather than being treated as evidence of lying.
-Unchallenged claims are never counted as known truths. Conservative priors
-favor safe shedding before sufficient opponent evidence is available.
+group (one to four current card references), while adding occasional two-card
+semi-bluffs only from large, all-singleton hands with a cheap pile and no
+nearby opponent finish. Challenges use logically impossible rank counts and
+per-opponent, per-batch-size statistics from publicly revealed challenge
+results. A large pile increases pickup risk rather than being treated as
+evidence of lying. Unchallenged claims are never counted as known truths.
 
 The policy uses only its supplied observation and optional JSON checkpoint.
 It now reads deck count for impossibility checks and profiles all configured

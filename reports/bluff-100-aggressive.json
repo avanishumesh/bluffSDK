@@ -1,0 +1,49 @@
+{
+  "games": 100,
+  "seed_start": 42000,
+  "opponents": [
+    "heuristic",
+    "conservative",
+    "random"
+  ],
+  "wins": 34,
+  "win_rate": 0.34,
+  "mean_points": 3.43,
+  "placements": {
+    "second": 41,
+    "third": 25,
+    "fourth": 0,
+    "draws": 0
+  },
+  "faults": 0,
+  "by_starting_seat": {
+    "0": {
+      "games": 25,
+      "wins": 10,
+      "points": 89.0,
+      "win_rate": 0.4,
+      "mean_points": 3.56
+    },
+    "1": {
+      "games": 25,
+      "wins": 11,
+      "points": 93.0,
+      "win_rate": 0.44,
+      "mean_points": 3.72
+    },
+    "2": {
+      "games": 25,
+      "wins": 5,
+      "points": 77.0,
+      "win_rate": 0.2,
+      "mean_points": 3.08
+    },
+    "3": {
+      "games": 25,
+      "wins": 8,
+      "points": 84.0,
+      "win_rate": 0.32,
+      "mean_points": 3.36
+    }
+  }
+}

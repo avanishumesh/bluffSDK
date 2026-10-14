@@ -1,0 +1,18 @@
+[
+  {
+    "Profile": "adaptive-pressure",
+    "Games": 2000.0,
+    "Wins": 699.0,
+    "WinRate": 0.3495,
+    "MeanPoints": 3.3885,
+    "Faults": 0.0
+  },
+  {
+    "Profile": "submission",
+    "Games": 2000.0,
+    "Wins": 720.0,
+    "WinRate": 0.36,
+    "MeanPoints": 3.41,
+    "Faults": 0.0
+  }
+]

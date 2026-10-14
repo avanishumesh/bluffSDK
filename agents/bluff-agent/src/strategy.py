@@ -28,8 +28,25 @@ from typing import Any
 RANKS: tuple[str, ...] = ("A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K")
 RANK_INDEX = {rank: i for i, rank in enumerate(RANKS)}
 
-PRIOR_BLUFF_RATE = 0.12
-PRIOR_WEIGHT = 4.0
+# Tuned with a 1,200-game local profile sweep and a 2,000-game fresh-seed
+# confirmation against the bundled heuristic, conservative, and random
+# policies. Keep all game-style choices here so the policy can be measured as
+# a configuration rather than by editing decision code repeatedly.
+POLICY_PARAMS = {
+    "prior_bluff_rate": 0.12,
+    "prior_weight": 4.0,
+    "challenge_threshold": 0.49,
+    "finish_relief": 0.23,
+    "near_finish_relief": 0.12,
+    "large_claim_relief": 0.10,
+    "pressure_small_pile_rate": 0.46,
+    "pressure_medium_pile_rate": 0.28,
+    "pressure_min_hand": 7,
+    "pressure_max_pile": 6,
+    "pressure_min_opponent_hand": 5,
+    "adaptive_pressure": False,
+    "randomize_pressure_anchor": False,
+}
 
 
 # ---------------------------------------------------------------------------
@@ -75,7 +92,8 @@ def _opp_profile(public_history: list[dict[str, Any]], players: int = 4) -> dict
     stats: dict[int, dict[str, Any]] = {}
     for seat in range(players):
         stats[seat] = {"claims": 0, "resolved": 0, "bluffs": 0, "truths": 0,
-                       "last_ranks": [], "challenger_wins": 0, "by_count": {}}
+                       "last_ranks": [], "challenges": 0, "challenge_wins": 0,
+                       "by_count": {}}
     claims = {}
     for event in public_history or []:
         etype = event.get("type")
@@ -92,6 +110,11 @@ def _opp_profile(public_history: list[dict[str, Any]], players: int = 4) -> dict
         elif etype == "challenge_resolved":
             placer = event.get("placer")
             truthful = event.get("truthful")
+            challenger = event.get("challenger")
+            if isinstance(challenger, int) and challenger in stats:
+                stats[challenger]["challenges"] += 1
+                if truthful is False:
+                    stats[challenger]["challenge_wins"] += 1
             if isinstance(placer, int) and placer in stats and isinstance(truthful, bool):
                 stats[placer]["resolved"] += 1
                 source = claims.get(event.get("claim_id"), {})
@@ -104,23 +127,25 @@ def _opp_profile(public_history: list[dict[str, Any]], players: int = 4) -> dict
                     stats[placer]["truths"] += 1
                 else:
                     stats[placer]["bluffs"] += 1
-                    challenger = event.get("challenger")
-                    if isinstance(challenger, int) and challenger in stats:
-                        stats[challenger]["challenger_wins"] += 1
     return stats
 
 
 def _bluff_rate(stats: dict[str, Any]) -> float:
     """Shrinkage-smoothed bluff rate so 1-2 samples do not over-swing."""
     n = stats["resolved"]
-    return (stats["bluffs"] + PRIOR_BLUFF_RATE * PRIOR_WEIGHT) / (n + PRIOR_WEIGHT)
+    prior = POLICY_PARAMS["prior_bluff_rate"]
+    weight = POLICY_PARAMS["prior_weight"]
+    return (stats["bluffs"] + prior * weight) / (n + weight)
 
 
 # ---------------------------------------------------------------------------
 # Challenge side: P(bluff) estimation + pot-odds threshold
 # ---------------------------------------------------------------------------
 
-_BASE_BLUFF = {1: 0.12, 2: 0.10, 3: 0.08, 4: 0.06}
+# Multi-card claims are materially harder to make truthfully.  These priors
+# remain below the calling threshold until the claim size or public record adds
+# corroboration, which keeps the policy from gambling on every large pile.
+_BASE_BLUFF = {1: 0.12, 2: 0.16, 3: 0.23, 4: 0.30}
 
 
 def estimate_bluff_prob(observation: dict[str, Any], claim: dict[str, Any],
@@ -160,22 +185,26 @@ def challenge_threshold(observation: dict[str, Any], claim: dict[str, Any],
         except (TypeError, ValueError):
             placer_remaining = None
 
-    threshold = 0.60
+    threshold = POLICY_PARAMS["challenge_threshold"]
     # A large pickup jeopardizes our placement; it does not prove a bluff.
     threshold += min(0.10, 0.005 * max(0, pile_size - 6))
     # Must stop finishes: a successful bluff-out ends their game.
     if claim.get("provisional_finish") or placer_remaining == 0:
-        threshold -= 0.12
+        threshold -= POLICY_PARAMS["finish_relief"]
     elif isinstance(placer_remaining, int) and placer_remaining <= 3:
-        threshold -= 0.04
+        threshold -= POLICY_PARAMS["near_finish_relief"]
     # Protect our own near-win: avoid picking up when almost out.
     if our_hand <= 3:
         threshold += 0.12
     elif our_hand >= 10:
-        threshold -= 0.05
+        threshold -= POLICY_PARAMS["large_claim_relief"]
     # Cheap singles early offer little benefit relative to pickup risk.
     if count == 1 and pile_size <= 3:
         threshold += 0.04
+    elif count >= 3:
+        # Big batches are expensive for an opponent to make honestly and can
+        # move them sharply toward a finish, so test them a little sooner.
+        threshold -= 0.05
     return max(0.40, min(0.85, threshold))
 
 
@@ -207,7 +236,7 @@ def _decide_challenge(observation: dict[str, Any], agent_state: Any) -> tuple[di
 
 
 # ---------------------------------------------------------------------------
-# Placement side: safe truthful shedding
+# Placement side: truthful shedding with bounded early-pressure bluffs
 # ---------------------------------------------------------------------------
 
 def _groups(hand: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
@@ -222,6 +251,24 @@ def _best_rank(groups: dict[str, list[dict[str, Any]]]) -> str:
     return max(groups.items(), key=lambda item: (len(item[1]), item[0]))[0]
 
 
+def _pressure_multiplier(profile: dict[int, dict[str, Any]], seat: int) -> float:
+    """Reduce bluffs after the table has shown it will actually challenge.
+
+    A resolved challenge reveals only the first challenger clockwise, so this
+    is deliberately a one-sided adjustment: observed challenges can make us
+    safer, while a lack of observations never claims that a seat is passive.
+    """
+    opponents = [stats for other, stats in profile.items() if other != seat]
+    claims = sum(stats["claims"] for stats in opponents)
+    challenges = sum(stats["challenges"] for stats in opponents)
+    wins = sum(stats["challenge_wins"] for stats in opponents)
+    if claims < 4 or challenges == 0:
+        return 1.0
+    challenge_rate = challenges / claims
+    win_rate = wins / challenges
+    return max(0.40, 1.0 - 1.25 * challenge_rate - 0.25 * win_rate)
+
+
 def _decide_place(observation: dict[str, Any], agent_state: Any) -> tuple[dict[str, Any], Any]:
     hand = [c for c in (observation.get("hand") or []) if isinstance(c, dict) and isinstance(c.get("card_ref"), str)]
     if not hand:
@@ -230,10 +277,45 @@ def _decide_place(observation: dict[str, Any], agent_state: Any) -> tuple[dict[s
     groups = _groups(hand)
     if not groups:
         return accept(), _checkpoint(observation, agent_state)
-    # Truthful groups reduce the number of remaining placement turns
-    # without exposing the whole accumulated pile to a bluff penalty.
-    # Mixed-rank final batches used to turn a near-finish into a pickup.
     best = _best_rank(groups)
+    pile_size = int(observation.get("pile_size", 0) or 0)
+    hand_sizes = observation.get("hand_sizes") or []
+    try:
+        seat = int(observation.get("seat", -1))
+        opponent_sizes = [int(size) for index, size in enumerate(hand_sizes) if index != seat]
+        min_opponent = min(opponent_sizes) if opponent_sizes else 13
+    except (TypeError, ValueError):
+        min_opponent = 13
+        seat = -1
+    profile = _opp_profile(observation.get("public_history") or [], len(hand_sizes) or 4)
+
+    # When every rank is a singleton, pure truthful play discards only one
+    # card per turn and is easy for other agents to exploit.  With a small
+    # pile and no looming opponent finish, occasionally place a two-card
+    # semi-bluff: one card really is the declared rank, which is less exposed
+    # than claiming a rank we do not hold at all.  The hash keeps the mix
+    # reproducible without sharing random state between games.
+    if (len(groups[best]) == 1 and len(hand) >= POLICY_PARAMS["pressure_min_hand"]
+            and pile_size <= POLICY_PARAMS["pressure_max_pile"]
+            and min_opponent >= POLICY_PARAMS["pressure_min_opponent_hand"]):
+        rng = _hash_rng("pressure", observation.get("turn_number"), observation.get("seat"),
+                        pile_size, sorted(card.get("rank", "?") for card in hand))
+        pressure_rate = (POLICY_PARAMS["pressure_small_pile_rate"] if pile_size <= 3
+                         else POLICY_PARAMS["pressure_medium_pile_rate"])
+        if POLICY_PARAMS["adaptive_pressure"]:
+            pressure_rate *= _pressure_multiplier(profile, seat)
+        if rng.random() < pressure_rate:
+            # With singleton ranks, `_best_rank` would otherwise repeatedly
+            # choose the same lexical rank. Rotate the real anchor so a
+            # pattern-matching opponent cannot reserve copies of one rank.
+            anchor = rng.choice(hand) if POLICY_PARAMS["randomize_pressure_anchor"] else groups[best][0]
+            kicker = next(card for card in hand if card["card_ref"] != anchor["card_ref"])
+            return place([anchor["card_ref"], kicker["card_ref"]], anchor["rank"]), _checkpoint(
+                observation, agent_state, bluff=True)
+
+    # Truthful groups reduce the number of remaining placement turns without
+    # exposing an accumulated pile to a bluff penalty.  We never bluff a final
+    # batch because a single challenge would erase the near-finish.
     batch = groups[best][:4]
     return place([c["card_ref"] for c in batch], best), _checkpoint(
         observation, agent_state, bluff=False)

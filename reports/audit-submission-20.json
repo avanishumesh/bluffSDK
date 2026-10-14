@@ -1,0 +1,585 @@
+{
+  "game": "bluff",
+  "games": [
+    {
+      "seed": 2026101501,
+      "turns": 35,
+      "outcome": {
+        "placements": [
+          1,
+          2,
+          3,
+          0
+        ],
+        "is_draw": false,
+        "unfinished": [],
+        "reason": "all_placed",
+        "points": {
+          "0": 1.0,
+          "1": 5.0,
+          "2": 3.0,
+          "3": 2.0
+        }
+      },
+      "fallbacks": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0
+      },
+      "faults": [],
+      "latency_max_ms": 126.57679995754734
+    },
+    {
+      "seed": 2026101502,
+      "turns": 34,
+      "outcome": {
+        "placements": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "is_draw": false,
+        "unfinished": [],
+        "reason": "all_placed",
+        "points": {
+          "0": 5.0,
+          "1": 3.0,
+          "2": 2.0,
+          "3": 1.0
+        }
+      },
+      "fallbacks": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0
+      },
+      "faults": [],
+      "latency_max_ms": 117.08979995455593
+    },
+    {
+      "seed": 2026101503,
+      "turns": 35,
+      "outcome": {
+        "placements": [
+          2,
+          3,
+          0,
+          1
+        ],
+        "is_draw": false,
+        "unfinished": [],
+        "reason": "all_placed",
+        "points": {
+          "0": 2.0,
+          "1": 1.0,
+          "2": 5.0,
+          "3": 3.0
+        }
+      },
+      "fallbacks": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0
+      },
+      "faults": [],
+      "latency_max_ms": 120.59750000480562
+    },
+    {
+      "seed": 2026101504,
+      "turns": 33,
+      "outcome": {
+        "placements": [
+          0,
+          2,
+          1,
+          3
+        ],
+        "is_draw": false,
+        "unfinished": [],
+        "reason": "all_placed",
+        "points": {
+          "0": 5.0,
+          "1": 2.0,
+          "2": 3.0,
+          "3": 1.0
+        }
+      },
+      "fallbacks": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0
+      },
+      "faults": [],
+      "latency_max_ms": 119.2464999621734
+    },
+    {
+      "seed": 2026101505,
+      "turns": 33,
+      "outcome": {
+        "placements": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "is_draw": false,
+        "unfinished": [],
+        "reason": "all_placed",
+        "points": {
+          "0": 5.0,
+          "1": 3.0,
+          "2": 2.0,
+          "3": 1.0
+        }
+      },
+      "fallbacks": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0
+      },
+      "faults": [],
+      "latency_max_ms": 108.42920001596212
+    },
+    {
+      "seed": 2026101506,
+      "turns": 32,
+      "outcome": {
+        "placements": [
+          3,
+          2,
+          0,
+          1
+        ],
+        "is_draw": false,
+        "unfinished": [],
+        "reason": "all_placed",
+        "points": {
+          "0": 2.0,
+          "1": 1.0,
+          "2": 3.0,
+          "3": 5.0
+        }
+      },
+      "fallbacks": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0
+      },
+      "faults": [],
+      "latency_max_ms": 101.44940001191571
+    },
+    {
+      "seed": 2026101507,
+      "turns": 37,
+      "outcome": {
+        "placements": [
+          3,
+          0,
+          2,
+          1
+        ],
+        "is_draw": false,
+        "unfinished": [],
+        "reason": "all_placed",
+        "points": {
+          "0": 3.0,
+          "1": 1.0,
+          "2": 2.0,
+          "3": 5.0
+        }
+      },
+      "fallbacks": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0
+      },
+      "faults": [],
+      "latency_max_ms": 199.70469997497275
+    },
+    {
+      "seed": 2026101508,
+      "turns": 32,
+      "outcome": {
+        "placements": [
+          2,
+          3,
+          0,
+          1
+        ],
+        "is_draw": false,
+        "unfinished": [],
+        "reason": "all_placed",
+        "points": {
+          "0": 2.0,
+          "1": 1.0,
+          "2": 5.0,
+          "3": 3.0
+        }
+      },
+      "fallbacks": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0
+      },
+      "faults": [],
+      "latency_max_ms": 101.83100000722334
+    },
+    {
+      "seed": 2026101509,
+      "turns": 40,
+      "outcome": {
+        "placements": [
+          1,
+          2,
+          0,
+          3
+        ],
+        "is_draw": false,
+        "unfinished": [],
+        "reason": "all_placed",
+        "points": {
+          "0": 2.0,
+          "1": 5.0,
+          "2": 3.0,
+          "3": 1.0
+        }
+      },
+      "fallbacks": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0
+      },
+      "faults": [],
+      "latency_max_ms": 131.06399995740503
+    },
+    {
+      "seed": 2026101510,
+      "turns": 34,
+      "outcome": {
+        "placements": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "is_draw": false,
+        "unfinished": [],
+        "reason": "all_placed",
+        "points": {
+          "0": 5.0,
+          "1": 3.0,
+          "2": 2.0,
+          "3": 1.0
+        }
+      },
+      "fallbacks": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0
+      },
+      "faults": [],
+      "latency_max_ms": 122.74940003408119
+    },
+    {
+      "seed": 2026101511,
+      "turns": 40,
+      "outcome": {
+        "placements": [
+          0,
+          2,
+          3,
+          1
+        ],
+        "is_draw": false,
+        "unfinished": [],
+        "reason": "all_placed",
+        "points": {
+          "0": 5.0,
+          "1": 1.0,
+          "2": 3.0,
+          "3": 2.0
+        }
+      },
+      "fallbacks": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0
+      },
+      "faults": [],
+      "latency_max_ms": 114.34340005507693
+    },
+    {
+      "seed": 2026101512,
+      "turns": 38,
+      "outcome": {
+        "placements": [
+          1,
+          2,
+          3,
+          0
+        ],
+        "is_draw": false,
+        "unfinished": [],
+        "reason": "all_placed",
+        "points": {
+          "0": 1.0,
+          "1": 5.0,
+          "2": 3.0,
+          "3": 2.0
+        }
+      },
+      "fallbacks": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0
+      },
+      "faults": [],
+      "latency_max_ms": 118.29090001992881
+    },
+    {
+      "seed": 2026101513,
+      "turns": 34,
+      "outcome": {
+        "placements": [
+          1,
+          2,
+          0,
+          3
+        ],
+        "is_draw": false,
+        "unfinished": [],
+        "reason": "all_placed",
+        "points": {
+          "0": 2.0,
+          "1": 5.0,
+          "2": 3.0,
+          "3": 1.0
+        }
+      },
+      "fallbacks": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0
+      },
+      "faults": [],
+      "latency_max_ms": 138.55400000466034
+    },
+    {
+      "seed": 2026101514,
+      "turns": 37,
+      "outcome": {
+        "placements": [
+          1,
+          3,
+          0,
+          2
+        ],
+        "is_draw": false,
+        "unfinished": [],
+        "reason": "all_placed",
+        "points": {
+          "0": 2.0,
+          "1": 5.0,
+          "2": 1.0,
+          "3": 3.0
+        }
+      },
+      "fallbacks": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0
+      },
+      "faults": [],
+      "latency_max_ms": 112.24960000254214
+    },
+    {
+      "seed": 2026101515,
+      "turns": 34,
+      "outcome": {
+        "placements": [
+          2,
+          3,
+          0,
+          1
+        ],
+        "is_draw": false,
+        "unfinished": [],
+        "reason": "all_placed",
+        "points": {
+          "0": 2.0,
+          "1": 1.0,
+          "2": 5.0,
+          "3": 3.0
+        }
+      },
+      "fallbacks": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0
+      },
+      "faults": [],
+      "latency_max_ms": 102.01420000521466
+    },
+    {
+      "seed": 2026101516,
+      "turns": 34,
+      "outcome": {
+        "placements": [
+          1,
+          2,
+          3,
+          0
+        ],
+        "is_draw": false,
+        "unfinished": [],
+        "reason": "all_placed",
+        "points": {
+          "0": 1.0,
+          "1": 5.0,
+          "2": 3.0,
+          "3": 2.0
+        }
+      },
+      "fallbacks": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0
+      },
+      "faults": [],
+      "latency_max_ms": 101.08639998361468
+    },
+    {
+      "seed": 2026101517,
+      "turns": 30,
+      "outcome": {
+        "placements": [
+          3,
+          2,
+          0,
+          1
+        ],
+        "is_draw": false,
+        "unfinished": [],
+        "reason": "all_placed",
+        "points": {
+          "0": 2.0,
+          "1": 1.0,
+          "2": 3.0,
+          "3": 5.0
+        }
+      },
+      "fallbacks": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0
+      },
+      "faults": [],
+      "latency_max_ms": 125.68809994263574
+    },
+    {
+      "seed": 2026101518,
+      "turns": 35,
+      "outcome": {
+        "placements": [
+          3,
+          1,
+          0,
+          2
+        ],
+        "is_draw": false,
+        "unfinished": [],
+        "reason": "all_placed",
+        "points": {
+          "0": 2.0,
+          "1": 3.0,
+          "2": 1.0,
+          "3": 5.0
+        }
+      },
+      "fallbacks": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0
+      },
+      "faults": [],
+      "latency_max_ms": 132.57229997543618
+    },
+    {
+      "seed": 2026101519,
+      "turns": 32,
+      "outcome": {
+        "placements": [
+          2,
+          1,
+          3,
+          0
+        ],
+        "is_draw": false,
+        "unfinished": [],
+        "reason": "all_placed",
+        "points": {
+          "0": 1.0,
+          "1": 3.0,
+          "2": 5.0,
+          "3": 2.0
+        }
+      },
+      "fallbacks": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0
+      },
+      "faults": [],
+      "latency_max_ms": 118.94760001450777
+    },
+    {
+      "seed": 2026101520,
+      "turns": 34,
+      "outcome": {
+        "placements": [
+          1,
+          3,
+          2,
+          0
+        ],
+        "is_draw": false,
+        "unfinished": [],
+        "reason": "all_placed",
+        "points": {
+          "0": 1.0,
+          "1": 5.0,
+          "2": 2.0,
+          "3": 3.0
+        }
+      },
+      "fallbacks": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0
+      },
+      "faults": [],
+      "latency_max_ms": 108.45410003094003
+    }
+  ]
+}
