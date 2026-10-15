@@ -1,0 +1,113 @@
+{
+  "seed_start": 224000,
+  "games_per_scenario": 250,
+  "scenarios": {
+    "standard": [
+      "heuristic",
+      "conservative",
+      "random"
+    ],
+    "challenge_heavy": [
+      "aggressive_challenge",
+      "heuristic",
+      "random"
+    ],
+    "bluff_heavy": [
+      "pressure",
+      "conservative",
+      "heuristic"
+    ],
+    "combined": [
+      "pressure",
+      "aggressive_challenge",
+      "heuristic"
+    ]
+  },
+  "candidate_summaries": {
+    "default": {
+      "games": 1000,
+      "wins": 415,
+      "win_rate": 0.415,
+      "mean_points": 3.699,
+      "faults": 0,
+      "by_scenario": {
+        "standard": {
+          "games": 250,
+          "wins": 102,
+          "win_rate": 0.408,
+          "mean_points": 3.568,
+          "faults": 0
+        },
+        "challenge_heavy": {
+          "games": 250,
+          "wins": 112,
+          "win_rate": 0.448,
+          "mean_points": 3.896,
+          "faults": 0
+        },
+        "bluff_heavy": {
+          "games": 250,
+          "wins": 96,
+          "win_rate": 0.384,
+          "mean_points": 3.492,
+          "faults": 0
+        },
+        "combined": {
+          "games": 250,
+          "wins": 105,
+          "win_rate": 0.42,
+          "mean_points": 3.84,
+          "faults": 0
+        }
+      }
+    },
+    "reactive": {
+      "games": 1000,
+      "wins": 429,
+      "win_rate": 0.429,
+      "mean_points": 3.73,
+      "faults": 0,
+      "by_scenario": {
+        "standard": {
+          "games": 250,
+          "wins": 104,
+          "win_rate": 0.416,
+          "mean_points": 3.596,
+          "faults": 0
+        },
+        "challenge_heavy": {
+          "games": 250,
+          "wins": 118,
+          "win_rate": 0.472,
+          "mean_points": 3.944,
+          "faults": 0
+        },
+        "bluff_heavy": {
+          "games": 250,
+          "wins": 96,
+          "win_rate": 0.384,
+          "mean_points": 3.492,
+          "faults": 0
+        },
+        "combined": {
+          "games": 250,
+          "wins": 111,
+          "win_rate": 0.444,
+          "mean_points": 3.888,
+          "faults": 0
+        }
+      },
+      "paired_delta_win": {
+        "mean_candidate_minus_default": 0.014,
+        "ci95_low": 0.00671422420541718,
+        "ci95_high": 0.02128577579458282
+      },
+      "paired_delta_points": {
+        "mean_candidate_minus_default": 0.031,
+        "ci95_low": 0.015554366636813172,
+        "ci95_high": 0.04644563336318683
+      }
+    }
+  },
+  "selection_note": "Synthetic stress styles supplement the bundled standardized opponents; they are not an estimate of the organizer's roster."
+}

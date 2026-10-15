@@ -26,11 +26,9 @@ PROFILES = {
     "submission": {},
     "adaptive-pressure": {
         "adaptive_pressure": True,
-        "randomize_pressure_anchor": True,
     },
     "static-relentless": {
         "adaptive_pressure": False,
-        "randomize_pressure_anchor": False,
     },
     "guarded": {
         "challenge_threshold": 0.60,

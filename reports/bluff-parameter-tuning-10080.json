@@ -1,0 +1,1633 @@
+{
+  "method": "paired random search, held-out validation and untouched final test",
+  "training_data_note": "Game-level policy rollouts for heuristic parameter tuning; not supervised ML action labels.",
+  "opponents": [
+    "heuristic",
+    "conservative",
+    "random"
+  ],
+  "seed_ranges": {
+    "training_per_config": [
+      160000,
+      160251
+    ],
+    "validation": [
+      170000,
+      171499
+    ],
+    "final_test": [
+      180000,
+      181999
+    ]
+  },
+  "training_rollouts": 10080,
+  "training_configurations": 40,
+  "unique_training_game_seeds": 252,
+  "paired_seed_note": "The same environment seeds are reused across configurations to reduce variance in comparisons; each config produces a separate game trajectory.",
+  "training_dataset": "C:\\triad-submissions\\bluff\\bluffSDK\\reports\\bluff-policy-training-10080.jsonl",
+  "search_seed": 730241,
+  "default_validation": {
+    "config": {
+      "prior_bluff_rate": 0.12,
+      "prior_weight": 4.0,
+      "challenge_threshold": 0.49,
+      "finish_relief": 0.23,
+      "near_finish_relief": 0.12,
+      "large_claim_relief": 0.1,
+      "pressure_small_pile_rate": 0.46,
+      "pressure_medium_pile_rate": 0.28,
+      "pressure_min_hand": 7,
+      "pressure_max_pile": 6,
+      "pressure_min_opponent_hand": 5,
+      "adaptive_pressure": false,
+      "challenge_prior_rate": 0.18,
+      "challenge_prior_weight": 4.0
+    },
+    "result": {
+      "games": 1500,
+      "seed_start": 170000,
+      "policy_seed": 730243,
+      "wins": 566,
+      "win_rate": 0.37733333333333335,
+      "mean_points": 3.473333333333333,
+      "placements": {
+        "second": 512,
+        "third": 422,
+        "fourth": 0,
+        "draws": 0
+      },
+      "faults": 0
+    }
+  },
+  "training_ranked": [
+    {
+      "config": {
+        "prior_bluff_rate": 0.14715000196069966,
+        "prior_weight": 4.0,
+        "challenge_threshold": 0.6066426603616845,
+        "finish_relief": 0.2239452431059467,
+        "near_finish_relief": 0.06174094082779053,
+        "large_claim_relief": 0.08114529372244522,
+        "pressure_small_pile_rate": 0.5449782728434085,
+        "pressure_medium_pile_rate": 0.048673512998763185,
+        "pressure_min_hand": 6,
+        "pressure_max_pile": 3,
+        "pressure_min_opponent_hand": 4,
+        "adaptive_pressure": true,
+        "challenge_prior_rate": 0.08751806349356575,
+        "challenge_prior_weight": 2.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 96,
+        "win_rate": 0.38095238095238093,
+        "mean_points": 3.4365079365079363,
+        "placements": {
+          "second": 74,
+          "third": 82,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.17354209975003365,
+        "prior_weight": 4.0,
+        "challenge_threshold": 0.43813851490420136,
+        "finish_relief": 0.29404150257212136,
+        "near_finish_relief": 0.10093053548491646,
+        "large_claim_relief": 0.14262925163039158,
+        "pressure_small_pile_rate": 0.3668670421875017,
+        "pressure_medium_pile_rate": 0.3457900606436162,
+        "pressure_min_hand": 6,
+        "pressure_max_pile": 6,
+        "pressure_min_opponent_hand": 4,
+        "adaptive_pressure": false,
+        "challenge_prior_rate": 0.2814090959757323,
+        "challenge_prior_weight": 2.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 95,
+        "win_rate": 0.376984126984127,
+        "mean_points": 3.4325396825396823,
+        "placements": {
+          "second": 76,
+          "third": 81,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.21229181480331538,
+        "prior_weight": 2.0,
+        "challenge_threshold": 0.48589819923798827,
+        "finish_relief": 0.32058358545097654,
+        "near_finish_relief": 0.14816230998497903,
+        "large_claim_relief": 0.08562413299108253,
+        "pressure_small_pile_rate": 0.613278867336394,
+        "pressure_medium_pile_rate": 0.2637021134964229,
+        "pressure_min_hand": 7,
+        "pressure_max_pile": 6,
+        "pressure_min_opponent_hand": 3,
+        "adaptive_pressure": true,
+        "challenge_prior_rate": 0.24663506887702907,
+        "challenge_prior_weight": 8.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 93,
+        "win_rate": 0.36904761904761907,
+        "mean_points": 3.4285714285714284,
+        "placements": {
+          "second": 81,
+          "third": 78,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.20980291107275895,
+        "prior_weight": 8.0,
+        "challenge_threshold": 0.46221895402553015,
+        "finish_relief": 0.2964719446561853,
+        "near_finish_relief": 0.11951089223966055,
+        "large_claim_relief": 0.11868214346725998,
+        "pressure_small_pile_rate": 0.5012165793477619,
+        "pressure_medium_pile_rate": 0.34833742363819364,
+        "pressure_min_hand": 7,
+        "pressure_max_pile": 3,
+        "pressure_min_opponent_hand": 4,
+        "adaptive_pressure": false,
+        "challenge_prior_rate": 0.12482899827415712,
+        "challenge_prior_weight": 8.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 93,
+        "win_rate": 0.36904761904761907,
+        "mean_points": 3.4246031746031744,
+        "placements": {
+          "second": 80,
+          "third": 79,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.12,
+        "prior_weight": 4.0,
+        "challenge_threshold": 0.49,
+        "finish_relief": 0.23,
+        "near_finish_relief": 0.12,
+        "large_claim_relief": 0.1,
+        "pressure_small_pile_rate": 0.46,
+        "pressure_medium_pile_rate": 0.28,
+        "pressure_min_hand": 7,
+        "pressure_max_pile": 6,
+        "pressure_min_opponent_hand": 5,
+        "adaptive_pressure": false,
+        "challenge_prior_rate": 0.18,
+        "challenge_prior_weight": 4.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 93,
+        "win_rate": 0.36904761904761907,
+        "mean_points": 3.4206349206349205,
+        "placements": {
+          "second": 79,
+          "third": 80,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.09525236935470957,
+        "prior_weight": 8.0,
+        "challenge_threshold": 0.5717470347918544,
+        "finish_relief": 0.21063920692466137,
+        "near_finish_relief": 0.14837724264070556,
+        "large_claim_relief": 0.027129598685410955,
+        "pressure_small_pile_rate": 0.5514008598071345,
+        "pressure_medium_pile_rate": 0.12028363794914629,
+        "pressure_min_hand": 7,
+        "pressure_max_pile": 6,
+        "pressure_min_opponent_hand": 4,
+        "adaptive_pressure": true,
+        "challenge_prior_rate": 0.2099585560932234,
+        "challenge_prior_weight": 8.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 93,
+        "win_rate": 0.36904761904761907,
+        "mean_points": 3.4206349206349205,
+        "placements": {
+          "second": 79,
+          "third": 80,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.20436533867800324,
+        "prior_weight": 2.0,
+        "challenge_threshold": 0.5854307433768448,
+        "finish_relief": 0.2497836012630835,
+        "near_finish_relief": 0.1311863392929012,
+        "large_claim_relief": 0.09612023191475225,
+        "pressure_small_pile_rate": 0.4263021222473884,
+        "pressure_medium_pile_rate": 0.15749879756114513,
+        "pressure_min_hand": 7,
+        "pressure_max_pile": 5,
+        "pressure_min_opponent_hand": 4,
+        "adaptive_pressure": false,
+        "challenge_prior_rate": 0.15076767707744365,
+        "challenge_prior_weight": 2.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 93,
+        "win_rate": 0.36904761904761907,
+        "mean_points": 3.4206349206349205,
+        "placements": {
+          "second": 79,
+          "third": 80,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.2346904353125294,
+        "prior_weight": 8.0,
+        "challenge_threshold": 0.4906977516873824,
+        "finish_relief": 0.20998762991056868,
+        "near_finish_relief": 0.12938088135409295,
+        "large_claim_relief": 0.1281544962472537,
+        "pressure_small_pile_rate": 0.4533186002584011,
+        "pressure_medium_pile_rate": 0.20004056572589432,
+        "pressure_min_hand": 7,
+        "pressure_max_pile": 5,
+        "pressure_min_opponent_hand": 4,
+        "adaptive_pressure": true,
+        "challenge_prior_rate": 0.19737761063751277,
+        "challenge_prior_weight": 8.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 93,
+        "win_rate": 0.36904761904761907,
+        "mean_points": 3.4206349206349205,
+        "placements": {
+          "second": 79,
+          "third": 80,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.18779762031963845,
+        "prior_weight": 8.0,
+        "challenge_threshold": 0.5837555097103845,
+        "finish_relief": 0.28444925542613714,
+        "near_finish_relief": 0.11940965964343028,
+        "large_claim_relief": 0.08507561377279751,
+        "pressure_small_pile_rate": 0.4168965433268321,
+        "pressure_medium_pile_rate": 0.35272092733439053,
+        "pressure_min_hand": 6,
+        "pressure_max_pile": 5,
+        "pressure_min_opponent_hand": 6,
+        "adaptive_pressure": false,
+        "challenge_prior_rate": 0.1626904686550896,
+        "challenge_prior_weight": 4.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 93,
+        "win_rate": 0.36904761904761907,
+        "mean_points": 3.4166666666666665,
+        "placements": {
+          "second": 78,
+          "third": 81,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.07199771651056401,
+        "prior_weight": 8.0,
+        "challenge_threshold": 0.49946688820464447,
+        "finish_relief": 0.3338824783085219,
+        "near_finish_relief": 0.0730988228337053,
+        "large_claim_relief": 0.13426828750772588,
+        "pressure_small_pile_rate": 0.4103491620437179,
+        "pressure_medium_pile_rate": 0.2008420338551816,
+        "pressure_min_hand": 7,
+        "pressure_max_pile": 7,
+        "pressure_min_opponent_hand": 5,
+        "adaptive_pressure": true,
+        "challenge_prior_rate": 0.29744323395526684,
+        "challenge_prior_weight": 8.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 92,
+        "win_rate": 0.36507936507936506,
+        "mean_points": 3.4166666666666665,
+        "placements": {
+          "second": 81,
+          "third": 79,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.22384900620771903,
+        "prior_weight": 4.0,
+        "challenge_threshold": 0.5939788223483919,
+        "finish_relief": 0.27017090861616744,
+        "near_finish_relief": 0.09440508404343911,
+        "large_claim_relief": 0.09994966099554123,
+        "pressure_small_pile_rate": 0.4166717355251202,
+        "pressure_medium_pile_rate": 0.299896204180429,
+        "pressure_min_hand": 6,
+        "pressure_max_pile": 4,
+        "pressure_min_opponent_hand": 6,
+        "adaptive_pressure": true,
+        "challenge_prior_rate": 0.16953227974579083,
+        "challenge_prior_weight": 8.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 92,
+        "win_rate": 0.36507936507936506,
+        "mean_points": 3.4087301587301586,
+        "placements": {
+          "second": 79,
+          "third": 81,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.13023201940277662,
+        "prior_weight": 4.0,
+        "challenge_threshold": 0.4585639321167758,
+        "finish_relief": 0.3077949106337955,
+        "near_finish_relief": 0.09766881175032444,
+        "large_claim_relief": 0.05625777445838186,
+        "pressure_small_pile_rate": 0.41589843327690024,
+        "pressure_medium_pile_rate": 0.24401708002396585,
+        "pressure_min_hand": 6,
+        "pressure_max_pile": 6,
+        "pressure_min_opponent_hand": 6,
+        "adaptive_pressure": true,
+        "challenge_prior_rate": 0.20731014839582473,
+        "challenge_prior_weight": 2.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 92,
+        "win_rate": 0.36507936507936506,
+        "mean_points": 3.4087301587301586,
+        "placements": {
+          "second": 79,
+          "third": 81,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.12338174040827701,
+        "prior_weight": 8.0,
+        "challenge_threshold": 0.6146843549477208,
+        "finish_relief": 0.17988651996106994,
+        "near_finish_relief": 0.10756702169986754,
+        "large_claim_relief": 0.054907439610969846,
+        "pressure_small_pile_rate": 0.4548659564023175,
+        "pressure_medium_pile_rate": 0.330550511706425,
+        "pressure_min_hand": 8,
+        "pressure_max_pile": 7,
+        "pressure_min_opponent_hand": 5,
+        "adaptive_pressure": false,
+        "challenge_prior_rate": 0.26636854456549863,
+        "challenge_prior_weight": 4.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 92,
+        "win_rate": 0.36507936507936506,
+        "mean_points": 3.4047619047619047,
+        "placements": {
+          "second": 78,
+          "third": 82,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.19166641231413878,
+        "prior_weight": 4.0,
+        "challenge_threshold": 0.5666606377037545,
+        "finish_relief": 0.29709758835992367,
+        "near_finish_relief": 0.12649279903299882,
+        "large_claim_relief": 0.0961181118825777,
+        "pressure_small_pile_rate": 0.18599335733231312,
+        "pressure_medium_pile_rate": 0.06942660887968773,
+        "pressure_min_hand": 6,
+        "pressure_max_pile": 7,
+        "pressure_min_opponent_hand": 5,
+        "adaptive_pressure": false,
+        "challenge_prior_rate": 0.27723685648105467,
+        "challenge_prior_weight": 8.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 91,
+        "win_rate": 0.3611111111111111,
+        "mean_points": 3.4047619047619047,
+        "placements": {
+          "second": 81,
+          "third": 80,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.22640315118155555,
+        "prior_weight": 8.0,
+        "challenge_threshold": 0.5958706488758405,
+        "finish_relief": 0.15244313537638496,
+        "near_finish_relief": 0.07424052200762951,
+        "large_claim_relief": 0.13758205630710096,
+        "pressure_small_pile_rate": 0.544117443108291,
+        "pressure_medium_pile_rate": 0.07893518112992085,
+        "pressure_min_hand": 8,
+        "pressure_max_pile": 3,
+        "pressure_min_opponent_hand": 7,
+        "adaptive_pressure": true,
+        "challenge_prior_rate": 0.09279793036032422,
+        "challenge_prior_weight": 2.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 91,
+        "win_rate": 0.3611111111111111,
+        "mean_points": 3.4007936507936507,
+        "placements": {
+          "second": 80,
+          "third": 81,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.17203653325416193,
+        "prior_weight": 2.0,
+        "challenge_threshold": 0.5537067404525211,
+        "finish_relief": 0.19081889881116104,
+        "near_finish_relief": 0.05579053144812863,
+        "large_claim_relief": 0.042884790601203426,
+        "pressure_small_pile_rate": 0.2208773237081888,
+        "pressure_medium_pile_rate": 0.1546006209848996,
+        "pressure_min_hand": 7,
+        "pressure_max_pile": 7,
+        "pressure_min_opponent_hand": 4,
+        "adaptive_pressure": false,
+        "challenge_prior_rate": 0.18293106723797908,
+        "challenge_prior_weight": 2.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 89,
+        "win_rate": 0.3531746031746032,
+        "mean_points": 3.392857142857143,
+        "placements": {
+          "second": 84,
+          "third": 79,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.1918428647981225,
+        "prior_weight": 8.0,
+        "challenge_threshold": 0.5128608008761623,
+        "finish_relief": 0.16717513493258046,
+        "near_finish_relief": 0.059305786356018325,
+        "large_claim_relief": 0.06421594482443423,
+        "pressure_small_pile_rate": 0.5597009220211131,
+        "pressure_medium_pile_rate": 0.3254679226407278,
+        "pressure_min_hand": 7,
+        "pressure_max_pile": 4,
+        "pressure_min_opponent_hand": 7,
+        "adaptive_pressure": false,
+        "challenge_prior_rate": 0.2626511643205993,
+        "challenge_prior_weight": 2.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 91,
+        "win_rate": 0.3611111111111111,
+        "mean_points": 3.388888888888889,
+        "placements": {
+          "second": 77,
+          "third": 84,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.13206292754740784,
+        "prior_weight": 8.0,
+        "challenge_threshold": 0.49651229658459795,
+        "finish_relief": 0.3103368842704046,
+        "near_finish_relief": 0.07305182514453368,
+        "large_claim_relief": 0.14849967457381144,
+        "pressure_small_pile_rate": 0.3161958837465634,
+        "pressure_medium_pile_rate": 0.29063316185928423,
+        "pressure_min_hand": 7,
+        "pressure_max_pile": 4,
+        "pressure_min_opponent_hand": 4,
+        "adaptive_pressure": true,
+        "challenge_prior_rate": 0.18461679796868014,
+        "challenge_prior_weight": 4.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 90,
+        "win_rate": 0.35714285714285715,
+        "mean_points": 3.388888888888889,
+        "placements": {
+          "second": 80,
+          "third": 82,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.11636464072455484,
+        "prior_weight": 2.0,
+        "challenge_threshold": 0.5697506402236754,
+        "finish_relief": 0.23191160747316836,
+        "near_finish_relief": 0.1173427268745591,
+        "large_claim_relief": 0.050458895068575475,
+        "pressure_small_pile_rate": 0.32277470472169756,
+        "pressure_medium_pile_rate": 0.22388792764856294,
+        "pressure_min_hand": 10,
+        "pressure_max_pile": 7,
+        "pressure_min_opponent_hand": 7,
+        "adaptive_pressure": true,
+        "challenge_prior_rate": 0.15561438185677245,
+        "challenge_prior_weight": 8.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 89,
+        "win_rate": 0.3531746031746032,
+        "mean_points": 3.384920634920635,
+        "placements": {
+          "second": 82,
+          "third": 81,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.20895463175335596,
+        "prior_weight": 8.0,
+        "challenge_threshold": 0.5335281232710983,
+        "finish_relief": 0.21159091623298065,
+        "near_finish_relief": 0.06772023318459924,
+        "large_claim_relief": 0.050291018098884144,
+        "pressure_small_pile_rate": 0.35426913069944554,
+        "pressure_medium_pile_rate": 0.06027349766165518,
+        "pressure_min_hand": 9,
+        "pressure_max_pile": 6,
+        "pressure_min_opponent_hand": 4,
+        "adaptive_pressure": false,
+        "challenge_prior_rate": 0.28110579935969254,
+        "challenge_prior_weight": 8.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 89,
+        "win_rate": 0.3531746031746032,
+        "mean_points": 3.384920634920635,
+        "placements": {
+          "second": 82,
+          "third": 81,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.23681609660829916,
+        "prior_weight": 4.0,
+        "challenge_threshold": 0.6273166720841143,
+        "finish_relief": 0.13111813789172977,
+        "near_finish_relief": 0.09306499738638999,
+        "large_claim_relief": 0.10943007677063794,
+        "pressure_small_pile_rate": 0.3805685092848328,
+        "pressure_medium_pile_rate": 0.29979102914925476,
+        "pressure_min_hand": 10,
+        "pressure_max_pile": 6,
+        "pressure_min_opponent_hand": 6,
+        "adaptive_pressure": false,
+        "challenge_prior_rate": 0.11434437254151159,
+        "challenge_prior_weight": 4.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 89,
+        "win_rate": 0.3531746031746032,
+        "mean_points": 3.384920634920635,
+        "placements": {
+          "second": 82,
+          "third": 81,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.1271738248296309,
+        "prior_weight": 8.0,
+        "challenge_threshold": 0.5982159170998834,
+        "finish_relief": 0.21822186926298004,
+        "near_finish_relief": 0.06200909954461689,
+        "large_claim_relief": 0.03974335919858974,
+        "pressure_small_pile_rate": 0.5355056536518208,
+        "pressure_medium_pile_rate": 0.07259588683783214,
+        "pressure_min_hand": 9,
+        "pressure_max_pile": 4,
+        "pressure_min_opponent_hand": 6,
+        "adaptive_pressure": false,
+        "challenge_prior_rate": 0.2507348013570185,
+        "challenge_prior_weight": 8.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 89,
+        "win_rate": 0.3531746031746032,
+        "mean_points": 3.384920634920635,
+        "placements": {
+          "second": 82,
+          "third": 81,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.16061468177023536,
+        "prior_weight": 4.0,
+        "challenge_threshold": 0.6115426535957526,
+        "finish_relief": 0.12893084692519868,
+        "near_finish_relief": 0.1183740556238006,
+        "large_claim_relief": 0.05255659645288316,
+        "pressure_small_pile_rate": 0.267943470742361,
+        "pressure_medium_pile_rate": 0.15203411211583015,
+        "pressure_min_hand": 10,
+        "pressure_max_pile": 7,
+        "pressure_min_opponent_hand": 3,
+        "adaptive_pressure": false,
+        "challenge_prior_rate": 0.1727349777752691,
+        "challenge_prior_weight": 2.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 89,
+        "win_rate": 0.3531746031746032,
+        "mean_points": 3.384920634920635,
+        "placements": {
+          "second": 82,
+          "third": 81,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.13358398961084902,
+        "prior_weight": 8.0,
+        "challenge_threshold": 0.5567808952397444,
+        "finish_relief": 0.23194847979325867,
+        "near_finish_relief": 0.09613208645853469,
+        "large_claim_relief": 0.13227991269345127,
+        "pressure_small_pile_rate": 0.48319319287989143,
+        "pressure_medium_pile_rate": 0.33563407113947463,
+        "pressure_min_hand": 10,
+        "pressure_max_pile": 4,
+        "pressure_min_opponent_hand": 4,
+        "adaptive_pressure": true,
+        "challenge_prior_rate": 0.09762202257155195,
+        "challenge_prior_weight": 4.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 89,
+        "win_rate": 0.3531746031746032,
+        "mean_points": 3.384920634920635,
+        "placements": {
+          "second": 82,
+          "third": 81,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.23753720058814462,
+        "prior_weight": 8.0,
+        "challenge_threshold": 0.4829795456374623,
+        "finish_relief": 0.25115038323497096,
+        "near_finish_relief": 0.15136223519525138,
+        "large_claim_relief": 0.14733301985516623,
+        "pressure_small_pile_rate": 0.3565201152805356,
+        "pressure_medium_pile_rate": 0.2857112018663853,
+        "pressure_min_hand": 9,
+        "pressure_max_pile": 6,
+        "pressure_min_opponent_hand": 6,
+        "adaptive_pressure": false,
+        "challenge_prior_rate": 0.18276140758450385,
+        "challenge_prior_weight": 8.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 89,
+        "win_rate": 0.3531746031746032,
+        "mean_points": 3.384920634920635,
+        "placements": {
+          "second": 82,
+          "third": 81,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.23636986858467374,
+        "prior_weight": 2.0,
+        "challenge_threshold": 0.5615589384404128,
+        "finish_relief": 0.25553317675747333,
+        "near_finish_relief": 0.10944129355639984,
+        "large_claim_relief": 0.05090056865779487,
+        "pressure_small_pile_rate": 0.31326061303021,
+        "pressure_medium_pile_rate": 0.1852170449113489,
+        "pressure_min_hand": 10,
+        "pressure_max_pile": 5,
+        "pressure_min_opponent_hand": 7,
+        "adaptive_pressure": false,
+        "challenge_prior_rate": 0.17862570481388212,
+        "challenge_prior_weight": 8.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 89,
+        "win_rate": 0.3531746031746032,
+        "mean_points": 3.384920634920635,
+        "placements": {
+          "second": 82,
+          "third": 81,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.2089465525132576,
+        "prior_weight": 8.0,
+        "challenge_threshold": 0.5164912435458021,
+        "finish_relief": 0.26202502035772723,
+        "near_finish_relief": 0.15661456186010872,
+        "large_claim_relief": 0.06518652589352347,
+        "pressure_small_pile_rate": 0.2392264076373888,
+        "pressure_medium_pile_rate": 0.18734716849958713,
+        "pressure_min_hand": 9,
+        "pressure_max_pile": 7,
+        "pressure_min_opponent_hand": 4,
+        "adaptive_pressure": false,
+        "challenge_prior_rate": 0.24116542235827837,
+        "challenge_prior_weight": 4.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 89,
+        "win_rate": 0.3531746031746032,
+        "mean_points": 3.384920634920635,
+        "placements": {
+          "second": 82,
+          "third": 81,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.08668300069541873,
+        "prior_weight": 2.0,
+        "challenge_threshold": 0.4853977504928112,
+        "finish_relief": 0.3161937226850582,
+        "near_finish_relief": 0.12505442694162539,
+        "large_claim_relief": 0.06889874381375416,
+        "pressure_small_pile_rate": 0.3514114342095805,
+        "pressure_medium_pile_rate": 0.11821317355974875,
+        "pressure_min_hand": 10,
+        "pressure_max_pile": 3,
+        "pressure_min_opponent_hand": 5,
+        "adaptive_pressure": false,
+        "challenge_prior_rate": 0.18778253223821814,
+        "challenge_prior_weight": 8.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 89,
+        "win_rate": 0.3531746031746032,
+        "mean_points": 3.384920634920635,
+        "placements": {
+          "second": 82,
+          "third": 81,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.20451909887937386,
+        "prior_weight": 8.0,
+        "challenge_threshold": 0.6270605295652756,
+        "finish_relief": 0.26111569541962537,
+        "near_finish_relief": 0.061107420888862986,
+        "large_claim_relief": 0.10134177743831048,
+        "pressure_small_pile_rate": 0.2208272232723012,
+        "pressure_medium_pile_rate": 0.18403707697038127,
+        "pressure_min_hand": 6,
+        "pressure_max_pile": 3,
+        "pressure_min_opponent_hand": 5,
+        "adaptive_pressure": true,
+        "challenge_prior_rate": 0.09308782895867972,
+        "challenge_prior_weight": 4.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 89,
+        "win_rate": 0.3531746031746032,
+        "mean_points": 3.384920634920635,
+        "placements": {
+          "second": 82,
+          "third": 81,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.12159604833112117,
+        "prior_weight": 2.0,
+        "challenge_threshold": 0.5126502265357102,
+        "finish_relief": 0.30312168434175646,
+        "near_finish_relief": 0.12710897734553978,
+        "large_claim_relief": 0.033376694168035834,
+        "pressure_small_pile_rate": 0.3286185022380637,
+        "pressure_medium_pile_rate": 0.11983000374881836,
+        "pressure_min_hand": 9,
+        "pressure_max_pile": 6,
+        "pressure_min_opponent_hand": 3,
+        "adaptive_pressure": false,
+        "challenge_prior_rate": 0.13710726627208455,
+        "challenge_prior_weight": 8.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 89,
+        "win_rate": 0.3531746031746032,
+        "mean_points": 3.384920634920635,
+        "placements": {
+          "second": 82,
+          "third": 81,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.20155155665119243,
+        "prior_weight": 8.0,
+        "challenge_threshold": 0.4683600527366072,
+        "finish_relief": 0.20015563605183478,
+        "near_finish_relief": 0.10386095189380265,
+        "large_claim_relief": 0.14120366095368495,
+        "pressure_small_pile_rate": 0.32146974372683895,
+        "pressure_medium_pile_rate": 0.24592724774220698,
+        "pressure_min_hand": 9,
+        "pressure_max_pile": 7,
+        "pressure_min_opponent_hand": 3,
+        "adaptive_pressure": true,
+        "challenge_prior_rate": 0.2945421059617342,
+        "challenge_prior_weight": 2.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 89,
+        "win_rate": 0.3531746031746032,
+        "mean_points": 3.384920634920635,
+        "placements": {
+          "second": 82,
+          "third": 81,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.09522516241274916,
+        "prior_weight": 8.0,
+        "challenge_threshold": 0.5963800206768934,
+        "finish_relief": 0.24033697706630455,
+        "near_finish_relief": 0.054278941318850214,
+        "large_claim_relief": 0.1396528809034234,
+        "pressure_small_pile_rate": 0.3247248309069378,
+        "pressure_medium_pile_rate": 0.07204372601478642,
+        "pressure_min_hand": 8,
+        "pressure_max_pile": 6,
+        "pressure_min_opponent_hand": 4,
+        "adaptive_pressure": false,
+        "challenge_prior_rate": 0.13392752513156592,
+        "challenge_prior_weight": 8.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 89,
+        "win_rate": 0.3531746031746032,
+        "mean_points": 3.384920634920635,
+        "placements": {
+          "second": 82,
+          "third": 81,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.2025728655604856,
+        "prior_weight": 8.0,
+        "challenge_threshold": 0.49083756345809715,
+        "finish_relief": 0.19605678637008772,
+        "near_finish_relief": 0.13216091890957982,
+        "large_claim_relief": 0.11064378609999158,
+        "pressure_small_pile_rate": 0.18770402071903247,
+        "pressure_medium_pile_rate": 0.16813411175665854,
+        "pressure_min_hand": 9,
+        "pressure_max_pile": 7,
+        "pressure_min_opponent_hand": 4,
+        "adaptive_pressure": true,
+        "challenge_prior_rate": 0.21034345459610848,
+        "challenge_prior_weight": 4.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 89,
+        "win_rate": 0.3531746031746032,
+        "mean_points": 3.384920634920635,
+        "placements": {
+          "second": 82,
+          "third": 81,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.06267082375635212,
+        "prior_weight": 8.0,
+        "challenge_threshold": 0.6289501139522057,
+        "finish_relief": 0.2911157171030378,
+        "near_finish_relief": 0.05048309448160127,
+        "large_claim_relief": 0.03844319951360145,
+        "pressure_small_pile_rate": 0.42523863751429414,
+        "pressure_medium_pile_rate": 0.09471838364557505,
+        "pressure_min_hand": 10,
+        "pressure_max_pile": 7,
+        "pressure_min_opponent_hand": 3,
+        "adaptive_pressure": true,
+        "challenge_prior_rate": 0.24253768487687222,
+        "challenge_prior_weight": 4.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 89,
+        "win_rate": 0.3531746031746032,
+        "mean_points": 3.384920634920635,
+        "placements": {
+          "second": 82,
+          "third": 81,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.07481286708004298,
+        "prior_weight": 8.0,
+        "challenge_threshold": 0.4298329236259,
+        "finish_relief": 0.28633384894819575,
+        "near_finish_relief": 0.10403264429093165,
+        "large_claim_relief": 0.13427477285729963,
+        "pressure_small_pile_rate": 0.33642952585396646,
+        "pressure_medium_pile_rate": 0.2567526193803092,
+        "pressure_min_hand": 8,
+        "pressure_max_pile": 7,
+        "pressure_min_opponent_hand": 7,
+        "adaptive_pressure": true,
+        "challenge_prior_rate": 0.2056046670565338,
+        "challenge_prior_weight": 2.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 89,
+        "win_rate": 0.3531746031746032,
+        "mean_points": 3.380952380952381,
+        "placements": {
+          "second": 81,
+          "third": 82,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.2331678751431372,
+        "prior_weight": 4.0,
+        "challenge_threshold": 0.4488245862111177,
+        "finish_relief": 0.2428092761993726,
+        "near_finish_relief": 0.16526238411979505,
+        "large_claim_relief": 0.10767403068309107,
+        "pressure_small_pile_rate": 0.19934925080427757,
+        "pressure_medium_pile_rate": 0.16715726328503716,
+        "pressure_min_hand": 10,
+        "pressure_max_pile": 5,
+        "pressure_min_opponent_hand": 3,
+        "adaptive_pressure": false,
+        "challenge_prior_rate": 0.21074706099240959,
+        "challenge_prior_weight": 8.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 89,
+        "win_rate": 0.3531746031746032,
+        "mean_points": 3.380952380952381,
+        "placements": {
+          "second": 81,
+          "third": 82,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.08776816146626329,
+        "prior_weight": 8.0,
+        "challenge_threshold": 0.45826933690173155,
+        "finish_relief": 0.12325796171528103,
+        "near_finish_relief": 0.05835401322220788,
+        "large_claim_relief": 0.12420137788911169,
+        "pressure_small_pile_rate": 0.316095989200597,
+        "pressure_medium_pile_rate": 0.04399831092626002,
+        "pressure_min_hand": 8,
+        "pressure_max_pile": 7,
+        "pressure_min_opponent_hand": 7,
+        "adaptive_pressure": true,
+        "challenge_prior_rate": 0.1481970920315986,
+        "challenge_prior_weight": 4.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 89,
+        "win_rate": 0.3531746031746032,
+        "mean_points": 3.380952380952381,
+        "placements": {
+          "second": 81,
+          "third": 82,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.13156866670840758,
+        "prior_weight": 2.0,
+        "challenge_threshold": 0.49594544482565583,
+        "finish_relief": 0.2715725093343495,
+        "near_finish_relief": 0.09543888741899004,
+        "large_claim_relief": 0.021616862378382305,
+        "pressure_small_pile_rate": 0.4421297732826723,
+        "pressure_medium_pile_rate": 0.1578137404675348,
+        "pressure_min_hand": 6,
+        "pressure_max_pile": 6,
+        "pressure_min_opponent_hand": 7,
+        "adaptive_pressure": false,
+        "challenge_prior_rate": 0.29668330805469173,
+        "challenge_prior_weight": 2.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 89,
+        "win_rate": 0.3531746031746032,
+        "mean_points": 3.380952380952381,
+        "placements": {
+          "second": 81,
+          "third": 82,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.1437328510199507,
+        "prior_weight": 2.0,
+        "challenge_threshold": 0.4631476229304287,
+        "finish_relief": 0.2980697100924021,
+        "near_finish_relief": 0.06745300539856074,
+        "large_claim_relief": 0.12510347233290323,
+        "pressure_small_pile_rate": 0.19336730168763402,
+        "pressure_medium_pile_rate": 0.13504892197824575,
+        "pressure_min_hand": 9,
+        "pressure_max_pile": 7,
+        "pressure_min_opponent_hand": 3,
+        "adaptive_pressure": true,
+        "challenge_prior_rate": 0.09402793249985654,
+        "challenge_prior_weight": 4.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 89,
+        "win_rate": 0.3531746031746032,
+        "mean_points": 3.380952380952381,
+        "placements": {
+          "second": 81,
+          "third": 82,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.06615862044432429,
+        "prior_weight": 4.0,
+        "challenge_threshold": 0.513379426102051,
+        "finish_relief": 0.252552056820591,
+        "near_finish_relief": 0.12016191759275449,
+        "large_claim_relief": 0.07584852633893854,
+        "pressure_small_pile_rate": 0.4760954636767569,
+        "pressure_medium_pile_rate": 0.08000788717705028,
+        "pressure_min_hand": 6,
+        "pressure_max_pile": 4,
+        "pressure_min_opponent_hand": 7,
+        "adaptive_pressure": true,
+        "challenge_prior_rate": 0.2208637058491308,
+        "challenge_prior_weight": 8.0
+      },
+      "result": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 88,
+        "win_rate": 0.3492063492063492,
+        "mean_points": 3.373015873015873,
+        "placements": {
+          "second": 82,
+          "third": 82,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      }
+    }
+  ],
+  "finalist_validation": [
+    {
+      "config": {
+        "prior_bluff_rate": 0.14715000196069966,
+        "prior_weight": 4.0,
+        "challenge_threshold": 0.6066426603616845,
+        "finish_relief": 0.2239452431059467,
+        "near_finish_relief": 0.06174094082779053,
+        "large_claim_relief": 0.08114529372244522,
+        "pressure_small_pile_rate": 0.5449782728434085,
+        "pressure_medium_pile_rate": 0.048673512998763185,
+        "pressure_min_hand": 6,
+        "pressure_max_pile": 3,
+        "pressure_min_opponent_hand": 4,
+        "adaptive_pressure": true,
+        "challenge_prior_rate": 0.08751806349356575,
+        "challenge_prior_weight": 2.0
+      },
+      "train": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 96,
+        "win_rate": 0.38095238095238093,
+        "mean_points": 3.4365079365079363,
+        "placements": {
+          "second": 74,
+          "third": 82,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      },
+      "validation": {
+        "games": 1500,
+        "seed_start": 170000,
+        "policy_seed": 730243,
+        "wins": 575,
+        "win_rate": 0.38333333333333336,
+        "mean_points": 3.4766666666666666,
+        "placements": {
+          "second": 490,
+          "third": 435,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      },
+      "paired_vs_default": {
+        "points": {
+          "games": 1500,
+          "mean_candidate_minus_default": 0.0033333333333333335,
+          "ci95_low": -0.019343418598993342,
+          "ci95_high": 0.02601008526566001
+        },
+        "win_rate": {
+          "games": 1500,
+          "mean_candidate_minus_default": 0.006,
+          "ci95_low": -0.002364025851298107,
+          "ci95_high": 0.014364025851298107
+        }
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.17354209975003365,
+        "prior_weight": 4.0,
+        "challenge_threshold": 0.43813851490420136,
+        "finish_relief": 0.29404150257212136,
+        "near_finish_relief": 0.10093053548491646,
+        "large_claim_relief": 0.14262925163039158,
+        "pressure_small_pile_rate": 0.3668670421875017,
+        "pressure_medium_pile_rate": 0.3457900606436162,
+        "pressure_min_hand": 6,
+        "pressure_max_pile": 6,
+        "pressure_min_opponent_hand": 4,
+        "adaptive_pressure": false,
+        "challenge_prior_rate": 0.2814090959757323,
+        "challenge_prior_weight": 2.0
+      },
+      "train": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 95,
+        "win_rate": 0.376984126984127,
+        "mean_points": 3.4325396825396823,
+        "placements": {
+          "second": 76,
+          "third": 81,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      },
+      "validation": {
+        "games": 1500,
+        "seed_start": 170000,
+        "policy_seed": 730243,
+        "wins": 571,
+        "win_rate": 0.38066666666666665,
+        "mean_points": 3.458666666666667,
+        "placements": {
+          "second": 475,
+          "third": 454,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      },
+      "paired_vs_default": {
+        "points": {
+          "games": 1500,
+          "mean_candidate_minus_default": -0.014666666666666666,
+          "ci95_low": -0.03910903960225554,
+          "ci95_high": 0.009775706268922211
+        },
+        "win_rate": {
+          "games": 1500,
+          "mean_candidate_minus_default": 0.0033333333333333335,
+          "ci95_low": -0.005433352484229249,
+          "ci95_high": 0.012100019150895917
+        }
+      }
+    },
+    {
+      "config": {
+        "prior_bluff_rate": 0.21229181480331538,
+        "prior_weight": 2.0,
+        "challenge_threshold": 0.48589819923798827,
+        "finish_relief": 0.32058358545097654,
+        "near_finish_relief": 0.14816230998497903,
+        "large_claim_relief": 0.08562413299108253,
+        "pressure_small_pile_rate": 0.613278867336394,
+        "pressure_medium_pile_rate": 0.2637021134964229,
+        "pressure_min_hand": 7,
+        "pressure_max_pile": 6,
+        "pressure_min_opponent_hand": 3,
+        "adaptive_pressure": true,
+        "challenge_prior_rate": 0.24663506887702907,
+        "challenge_prior_weight": 8.0
+      },
+      "train": {
+        "games": 252,
+        "seed_start": 160000,
+        "policy_seed": 730242,
+        "wins": 93,
+        "win_rate": 0.36904761904761907,
+        "mean_points": 3.4285714285714284,
+        "placements": {
+          "second": 81,
+          "third": 78,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      },
+      "validation": {
+        "games": 1500,
+        "seed_start": 170000,
+        "policy_seed": 730243,
+        "wins": 563,
+        "win_rate": 0.37533333333333335,
+        "mean_points": 3.47,
+        "placements": {
+          "second": 516,
+          "third": 421,
+          "fourth": 0,
+          "draws": 0
+        },
+        "faults": 0
+      },
+      "paired_vs_default": {
+        "points": {
+          "games": 1500,
+          "mean_candidate_minus_default": -0.0033333333333333335,
+          "ci95_low": -0.0112823361583479,
+          "ci95_high": 0.0046156694916812315
+        },
+        "win_rate": {
+          "games": 1500,
+          "mean_candidate_minus_default": -0.002,
+          "ci95_low": -0.004261702736032623,
+          "ci95_high": 0.0002617027360326228
+        }
+      }
+    }
+  ],
+  "selected_config": {
+    "prior_bluff_rate": 0.12,
+    "prior_weight": 4.0,
+    "challenge_threshold": 0.49,
+    "finish_relief": 0.23,
+    "near_finish_relief": 0.12,
+    "large_claim_relief": 0.1,
+    "pressure_small_pile_rate": 0.46,
+    "pressure_medium_pile_rate": 0.28,
+    "pressure_min_hand": 7,
+    "pressure_max_pile": 6,
+    "pressure_min_opponent_hand": 5,
+    "adaptive_pressure": false,
+    "challenge_prior_rate": 0.18,
+    "challenge_prior_weight": 4.0
+  },
+  "selection_reason": "selected only if a finalist's paired validation improvement in mean points had a 95% confidence interval above zero; otherwise kept defaults",
+  "final_test_default": {
+    "games": 2000,
+    "seed_start": 180000,
+    "policy_seed": 730244,
+    "wins": 714,
+    "win_rate": 0.357,
+    "mean_points": 3.409,
+    "placements": {
+      "second": 676,
+      "third": 610,
+      "fourth": 0,
+      "draws": 0
+    },
+    "faults": 0
+  },
+  "final_test_selected": {
+    "games": 2000,
+    "seed_start": 180000,
+    "policy_seed": 730244,
+    "wins": 714,
+    "win_rate": 0.357,
+    "mean_points": 3.409,
+    "placements": {
+      "second": 676,
+      "third": 610,
+      "fourth": 0,
+      "draws": 0
+    },
+    "faults": 0
+  },
+  "final_test_paired_comparison": {
+    "points": {
+      "games": 2000,
+      "mean_candidate_minus_default": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0
+    },
+    "win_rate": {
+      "games": 2000,
+      "mean_candidate_minus_default": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0
+    }
+  }
+}
