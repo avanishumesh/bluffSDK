@@ -1,1 +1,7 @@
-{"game":"triad-bluff-v1","protocol_version":"1.0","entrypoint":["python3","src/agent.py"],"compute":{"cpu":1,"gpu":false}}
+{
+  "game": "triad-bluff-v1",
+  "protocol_version": "1.0",
+  "entrypoint": ["python3", "src/agent.py"],
+  "compute": { "cpu": 1, "gpu": false },
+  "teamName": "TECHTEAM10650"
+}
